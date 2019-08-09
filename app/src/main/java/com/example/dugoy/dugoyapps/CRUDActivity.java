@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class CRUDActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ScrollView scrollView;
-    private LinkageError linearLayout;
+    private LinearLayout linearLayout;
     private EditText kuantitas;
     private Button btnAdd, btnUpdate, btnDelete, btnList, btnAPI;
     private Intent intent;
@@ -59,6 +59,7 @@ public class CRUDActivity extends AppCompatActivity implements View.OnClickListe
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
+        linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
         susu = findViewById(R.id.susu);
         keju = findViewById(R.id.keju);
@@ -168,12 +169,8 @@ public class CRUDActivity extends AppCompatActivity implements View.OnClickListe
                     long l = dbHelper.addContact(martabak);
 
                     if (l > -1) {
-
-                        Snackbar snackbar = Snackbar.make(rview, "Pesanan berhasil ditambahkan", Snackbar.LENGTH_LONG);
-                        View sbView = snackbar.getView();
-                        sbView.setBackgroundColor(Color.parseColor("#E91E63"));
-                        snackbar.show();
                         intent = new Intent(CRUDActivity.this, MartabakActivity.class);
+                        intent.putExtra("isNew", true);
                         startActivity(intent);
                     } else {
                         Toast.makeText(CRUDActivity.this, "Harap periksa kembali inputan anda.",

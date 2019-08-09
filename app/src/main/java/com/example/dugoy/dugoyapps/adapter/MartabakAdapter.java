@@ -1,5 +1,6 @@
 package com.example.dugoy.dugoyapps.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,7 +12,9 @@ import android.widget.Toast;
 import com.example.dugoy.dugoyapps.R;
 import com.example.dugoy.dugoyapps.model.Martabak;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class MartabakAdapter extends RecyclerView.Adapter<MartabakAdapter.MyViewHolder> {
 
@@ -23,8 +26,8 @@ public class MartabakAdapter extends RecyclerView.Adapter<MartabakAdapter.MyView
 
         public MyViewHolder(View view) {
             super(view);
-            tvName = view.findViewById(R.id.tv_name);
-            tvId = view.findViewById(R.id.tv_id);
+            tvName = view.findViewById(R.id.toppings);
+            tvId = view.findViewById(R.id.martabak_name);
             harga = view.findViewById(R.id.harga);
         }
     }
@@ -49,13 +52,18 @@ public class MartabakAdapter extends RecyclerView.Adapter<MartabakAdapter.MyView
 
         holder.tvId.setText(martabak.getName());
         holder.tvName.setText(martabak.getToppings());
-        holder.harga.setText(martabak.getSubtotal().toString());
+        holder.harga.setText(formatDecimal(martabak.getSubtotal()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, martabak.getName(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public String formatDecimal(double number) {
+        return NumberFormat.getCurrencyInstance(new Locale("in", "ID"))
+                .format(number);
     }
 
     @Override

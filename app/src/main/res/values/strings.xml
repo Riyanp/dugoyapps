@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DugoyApps</string>
     <string name="keranjang_martabak">Keranjang Martabak</string>
+    <string name="bunga">Bunga</string>
+    <string name="toppings">Toppings</string>
+    <string name="harga">Harga</string>
 </resources>

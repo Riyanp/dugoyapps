@@ -3,11 +3,12 @@ package com.example.dugoy.dugoyapps;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,7 +21,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.dugoy.dugoyapps.dao.DatabaseHandler;
-import com.example.dugoy.dugoyapps.R;
 import com.example.dugoy.dugoyapps.model.Martabak;
 import com.example.dugoy.dugoyapps.service.RetrofitActivity;
 import com.google.gson.Gson;
@@ -46,7 +46,7 @@ public class CRUDActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.martabak_crud_activity);
 
         dbHelper = new DatabaseHandler(CRUDActivity.this);
         kuantitas = findViewById(R.id.kuantitas);
@@ -101,7 +101,10 @@ public class CRUDActivity extends AppCompatActivity implements View.OnClickListe
             if (myMartabak.getType().contains("Special"))
                 special.setChecked(true);
 
-//            tel.setText(myMartabak.getTel());
+            Toolbar toolbar = findViewById(R.id.toolbar_actionbar_crud);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle("SQLite CRUD Example");
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#E91E63")));
         }
 
     }
@@ -170,7 +173,7 @@ public class CRUDActivity extends AppCompatActivity implements View.OnClickListe
 
                     if (l > -1) {
                         intent = new Intent(CRUDActivity.this, MartabakActivity.class);
-                        intent.putExtra("isNew", true);
+                        intent.putExtra("IS_NEW", 1);
                         startActivity(intent);
                     } else {
                         Toast.makeText(CRUDActivity.this, "Harap periksa kembali inputan anda.",

@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.dugoy.dugoyapps.dao.DatabaseHandler;
-import com.example.dugoy.dugoyapps.R;
 import com.example.dugoy.dugoyapps.model.Martabak;
 import com.example.dugoy.dugoyapps.service.RetrofitActivity;
 import com.google.gson.Gson;
@@ -41,7 +40,7 @@ public class ListFeatureActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_martabak);
+        setContentView(R.layout.activity_list);
 
 //        listView = findViewById(R.id.listMartabak);
         btnBack = findViewById(R.id.btnBack);

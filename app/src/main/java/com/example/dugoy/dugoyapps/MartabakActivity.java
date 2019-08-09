@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.dugoy.dugoyapps.dao.DatabaseHandler;
-import com.example.dugoy.dugoyapps.R;
 import com.example.dugoy.dugoyapps.adapter.MartabakAdapter;
 import com.example.dugoy.dugoyapps.model.Martabak;
 
@@ -30,7 +29,7 @@ public class MartabakActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_martabak);
+        setContentView(R.layout.martabak_recycler);
 
         db = new DatabaseHandler(this);
 
@@ -43,10 +42,14 @@ public class MartabakActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-        Bundle extras = getIntent().getExtras();
-        boolean IS_NEW = extras.getBoolean("isNew");
 
-        if (IS_NEW) {
+        Bundle extras = getIntent().getExtras();
+        int IS_NEW = 0;
+        if (getIntent().getExtras() != null) {
+            IS_NEW = getIntent().getIntExtra("IS_NEW", 0);
+        }
+
+        if (IS_NEW == 1) {
             Snackbar snackbar = Snackbar.make(recyclerView, "Pesanan Berhasil dibuat", Snackbar.LENGTH_LONG);
             View sbView = snackbar.getView();
             sbView.setBackgroundColor(Color.parseColor("#E91E63"));

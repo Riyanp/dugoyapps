@@ -38,7 +38,7 @@ public class MartabakAdapter extends RecyclerView.Adapter<MartabakAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.listview_martabak, parent, false);
+                .inflate(R.layout.martabak_row, parent, false);
 
         return new MyViewHolder(itemView);
     }

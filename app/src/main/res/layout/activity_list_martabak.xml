@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dugoy.dugoyapps.ListFeatureActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_actionbar"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:fitsSystemWindows="true"
+        app:titleTextColor="@color/colorWhite"/>
+
+    <!--<ListView-->
+        <!--android:id="@+id/listMartabak"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="148dp"></ListView>-->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBack"
+        android:text="SQLITE CRUD EXAMPLE"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRetro"
+        android:text="RECYCLER VIEW EXAMPLE"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+</LinearLayout>

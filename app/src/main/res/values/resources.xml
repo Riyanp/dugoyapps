@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="martabaks">
+        <item>Martabak Banda Original</item>
+        <item>Martabak Black Forest</item>
+    </string-array>
+</resources>

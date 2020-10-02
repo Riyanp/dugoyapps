@@ -3,5 +3,7 @@
     <string-array name="martabaks">
         <item>Martabak Banda Original</item>
         <item>Martabak Black Forest</item>
+        <item>Martabak Pandan Hijau</item>
+        <item>Martabak Red Velvet</item>
     </string-array>
 </resources>

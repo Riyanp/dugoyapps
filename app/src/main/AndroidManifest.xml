@@ -22,6 +22,7 @@
         <activity android:name="com.example.dugoy.dugoyapps.MyRecycleActivity"></activity>
         <activity android:name="com.example.dugoy.dugoyapps.service.RetrofitActivity" />
         <activity android:name="com.example.dugoy.dugoyapps.MartabakActivity" />
+        <activity android:name="com.example.dugoy.dugoyapps.MartabakDetailActivity" />
     </application>
 
 </manifest>

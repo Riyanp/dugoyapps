@@ -100,6 +100,8 @@ public class CRUDActivity extends AppCompatActivity implements View.OnClickListe
                 coklat.setChecked(true);
             if (myMartabak.getType().contains("Special"))
                 special.setChecked(true);
+            if (myMartabak.getType().contains("Very Special"))
+                special.setChecked(true);
 
             Toolbar toolbar = findViewById(R.id.toolbar_actionbar_crud);
             setSupportActionBar(toolbar);
